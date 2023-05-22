@@ -7,10 +7,19 @@ const TodoSlice=createSlice({
         addTodo:(state,action)=>{
             const newTodo= {id:uuidv4(),
                 todo:action.payload,
-                status:"unChecked"}
+                status:false}
             state.push(newTodo)
         },
+        statusChange:(state,action)=>{
+           state.map((todo)=>{
+                if(todo.id===action.payload){
+                   todo.status=!todo.status
+                   
+                }
+                return todo
+            }) 
+        }
     }
 })
-export const {addTodo} = TodoSlice.actions
+export const {addTodo,statusChange} = TodoSlice.actions
 export default TodoSlice
