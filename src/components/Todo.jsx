@@ -20,9 +20,25 @@ export const Todo = () => {
           />
         </form>
       </div>
-      <div className="h-[440px] rounded-md w-[100%] mt-[22px] bg-white shadow-2xl overflow-y-hidden ">
-        
+      <div className="h-max-[388px] rounded-md w-[100%] mt-[22px] bg-white shadow-2xl overflow-y-hidden ">
+        <div className="w-[100%] flex items-center h-[64px] border-b-[1px] py-[22px] px-[20px]">
+            <div className="circle mr-[22px]"></div>
+            Buy cars
+        </div>
       </div>
+      <div className="w-[100%]  flex justify-between items-center bg-white h-[64px] border-b-[1px] py-[22px] px-[20px]">
+        <div className="mr-8">
+            5 items completed
+        </div>
+        <div className="flex-grow flex justify-evenly">
+            <button>All</button>
+            <button>Active</button>
+            <button>Completed</button>
+        </div>
+        <div className="ml-8">
+            <button>Clear Completed</button>
+        </div>
+        </div>
     </div>
   );
 };
