@@ -51,3 +51,8 @@ html.dark .header-image{
   top: 0;
  z-index: 1;
 }
+@media screen and (max-width: 454px) {
+  .todo{
+    width: 323px;
+  }
+}

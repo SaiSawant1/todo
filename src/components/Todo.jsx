@@ -5,7 +5,7 @@ import CreateTodo from "./CreateTodo";
 
 export const Todo = () => {
   return (
-    <div className="w-[540px] z-10">
+    <div className="w-[540px] todo z-10">
       <TodoHeader/>
       <CreateTodo/>
       <TodoList/>
