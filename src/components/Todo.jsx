@@ -2,7 +2,6 @@ import React from "react";
 import TodoHeader from "./TodoHeader";
 import TodoList from "./TodoList";
 import CreateTodo from "./CreateTodo";
-import TodoControl from "./TodoControl";
 
 export const Todo = () => {
   return (
@@ -10,7 +9,6 @@ export const Todo = () => {
       <TodoHeader/>
       <CreateTodo/>
       <TodoList/>
-      <TodoControl/>
     </div>
   );
 };

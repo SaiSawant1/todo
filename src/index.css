@@ -30,3 +30,7 @@
 .back-ground-gradient{
   background: linear-gradient(90deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
 }
+.Active{
+  color:  hsl(235, 49%, 31%);
+  font-weight: bold;
+}
