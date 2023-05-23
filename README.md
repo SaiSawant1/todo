@@ -1,5 +1,8 @@
 ## TODO App
 
+![alt text](https://github.com/SaiSawant1/todo/blob/main/design/desktop-design-light.jpg)
+![alt text](https://github.com/SaiSawant1/todo/blob/main/design/desktop-design-dark.jpg)
+
 This to-do list app is a web application that helps users keep track of their tasks. To-do list app allows users to create lists of tasks and sort them based on various filters it is also responsive with and has dark mode. Currently this application is in its initial stage the UI is Completed however some of the features i want to add in future are still in progress. 
 Future versions will include ability to edit as well as to save to local storage it will also include a login page and a database so it can store tasks of particular user in database.
 
