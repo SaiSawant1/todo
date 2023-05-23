@@ -14,7 +14,7 @@ const CreateTodo = () => {
         <form onSubmit={handleSubmit}>
           <input
             ref={todoRef}
-            className="w-[100%] mt px-8 mt-[50px] text-[18px] h-[62px] rounded-lg"
+            className="w-[100%] mt dark:bg-blue-950 px-8 dark:text-gray-100 mt-[50px] text-[18px] h-[62px] rounded-lg"
             type="text"
             placeholder="Create a new Todo.."
           />

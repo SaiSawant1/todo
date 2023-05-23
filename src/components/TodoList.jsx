@@ -28,7 +28,7 @@ const TodoList = () => {
 
   return (
     <>
-    <div className="max-h-[388px] rounded-md w-[100%]  mt-[22px] bg-white shadow-2xl overflow-y-scroll ">
+    <div className="max-h-[388px] rounded-md w-[100%] dark:bg-blue-950 dark:text-gray-100 mt-[22px] bg-white shadow-2xl overflow-y-scroll ">
       {renderedList}
     </div>
     <TodoControl setFilterStatus={setFilterStatus} filterStatus={filterStatus}/>

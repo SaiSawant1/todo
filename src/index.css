@@ -19,7 +19,8 @@
   background-position: center;
   position: absolute;
   top: 0;
-  z-index: -100;
+  z-index: 1;
+  
 }
 .circle{
   width: 23px;
@@ -33,4 +34,20 @@
 .Active{
   color:  hsl(235, 49%, 31%);
   font-weight: bold;
+}
+html.dark .Active{
+  color:rgb(70, 70, 241);
+  font-weight: bold;
+}
+html.dark .header-image{
+  background-image: url('./images/bg-desktop-dark.jpg');
+  height: 300px;
+  width: 100vw;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+ z-index: 1;
 }
