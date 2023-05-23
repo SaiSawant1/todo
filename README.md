@@ -9,7 +9,6 @@ On the back end which is still in progress it will use firebase.
 For state management the application uses Redux toolkit.
 
 
- 
 
 
 # Getting Started with Create React App
