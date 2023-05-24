@@ -56,3 +56,10 @@ html.dark .header-image{
     width: 323px;
   }
 }
+.signupPage{
+  background-color: #2D033B;
+  color:  white;
+}
+.signupForm{
+  background-color: #810CA8;
+}
