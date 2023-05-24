@@ -57,9 +57,23 @@ html.dark .header-image{
   }
 }
 .signupPage{
-  background-color: #2D033B;
-  color:  white;
+  background-color: #F2F2F2;
+  color:  #203A40;
 }
 .signupForm{
-  background-color: #810CA8;
+  background-color: #F2B199;
+  border: #F24B59 solid 2px;
+}
+.signupForm input{
+  color: #203A40;
+}
+.signupForm button{
+  color: #203A40;
+  background-color: #F2727D ;
+  border: #203A40 solid 1px;
+}
+.signupForm button:hover{
+  color: #203A40;
+  background-color: #F24B59;
+  border: #203A40 solid 1px;
 }
