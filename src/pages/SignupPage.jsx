@@ -1,13 +1,34 @@
-import { faEnvelope, faEye, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faEye,faEyeSlash, faLock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useRef } from "react";
 import signUpImage from "../images/signUpImage.jpg";
 
 const SignupPage = () => {
+
+  const userEmail=useRef()
+  const userPassword=useRef()
+  const confirmPassword=useRef()
+  const [error,setError]=React.useState("")
+  const [isPwdvisible,setPwdvisible]=React.useState(false)
+
+  const handleSubmit=(e)=>{
+    setError("")
+    e.preventDefault()
+    if(confirmPassword.current.value!==userPassword.current.value){
+      setError("Passwords do not match")
+    }
+    userEmail.current.value=""
+    userPassword.current.value=""
+    confirmPassword.current.value=""
+  }
+
+
+
+
   return (
     <div className="signupPage flex justify-between items-center h-[100vh] w-[100vw]">
       <div className="signup-wrapper  flex flex-col h-[100vh] w-[50%] justify-center items-center">
-        <form className="signupForm p-6 rounded-md w-[70%] h-[60%] text-center">
+        <form onSubmit={handleSubmit} className="signupForm p-6 rounded-md w-[70%] h-[60%] text-center">
           <h1 className="text-5xl m-3" >Sign up</h1>
           <div>
             <h2 className="text-3xl m-2">Hello!</h2>
@@ -15,18 +36,19 @@ const SignupPage = () => {
           </div>
           <div className="mt-3 w-full flex h-10 items-center p-2 text-lg bg-white rounded-md ">
             <FontAwesomeIcon icon={faEnvelope} />
-            <input className="ml-2 grow" type="email" placeholder="Enter Email" name="" id="" />
+            <input required ref={userEmail} className="ml-2 grow" type="email" placeholder="Enter Email" name="" id="" />
           </div>
           <div className="mt-3 w-full flex h-10 items-center p-2 text-lg bg-white rounded-md ">
             <FontAwesomeIcon  icon={faLock} />
-            <input className="ml-2 grow" type="password" placeholder="Enter Password" />
+            <input required ref={userPassword} className="ml-2 grow" type="password" placeholder="Enter Password" />
           </div>
           <div className="mt-3 w-full flex h-10 items-center p-2 text-lg bg-white rounded-md ">
             <FontAwesomeIcon  icon={faLock} />
-            <input className="ml-2 grow" type="password" placeholder="Confirm Password" />
-            <FontAwesomeIcon  icon={faEye} />
+            <input required ref={confirmPassword} className="ml-2 grow" type={isPwdvisible?'text':"password"} placeholder="Confirm Password" />
+            <FontAwesomeIcon onClick={()=>setPwdvisible(!isPwdvisible)}  icon={isPwdvisible?faEyeSlash:faEye} />
           </div>
-          <button className="mt-3 rounded-2xl  w-full h-10 text-lg ">Sign up</button>
+          <button type="submit" className="mt-3 rounded-2xl  w-full h-10 text-lg ">Sign up</button>
+          {error && <p className="text-red-500">{error}</p>}
         </form>
       </div>
 
