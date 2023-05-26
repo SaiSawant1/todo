@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef } from "react";
 import signUpImage from "../images/signUpImage.jpg";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const SignupPage = () => {
   const userEmail = useRef();
@@ -15,12 +16,17 @@ const SignupPage = () => {
   const confirmPassword = useRef();
   const [error, setError] = React.useState("");
   const [isPwdvisible, setPwdvisible] = React.useState(false);
-
+  const {signup}=useAuth()
   const handleSubmit = (e) => {
     setError("");
     e.preventDefault();
     if (confirmPassword.current.value !== userPassword.current.value) {
       setError("Passwords do not match");
+    }
+    try {
+      signup(userEmail.current.value, userPassword.current.value);
+    } catch (error) {
+      setError(error.message);
     }
     userEmail.current.value = "";
     userPassword.current.value = "";
