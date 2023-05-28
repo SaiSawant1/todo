@@ -7,10 +7,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef } from "react";
 import signUpImage from "../images/signUpImage.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const SignupPage = () => {
+  const navigate = useNavigate();
   const userEmail = useRef();
   const userPassword = useRef();
   const confirmPassword = useRef();
@@ -25,6 +26,8 @@ const SignupPage = () => {
     }
     try {
       signup(userEmail.current.value, userPassword.current.value);
+      navigate("/");
+      
     } catch (error) {
       setError(error.message);
     }

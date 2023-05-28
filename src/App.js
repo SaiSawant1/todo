@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignupPage from "./pages/SignupPage";
 import { AuthProvider } from "./context/AuthContext";
 import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./context/ProtectedRoute.jsx";
 function App() {
   return (
     <ThemeContextProvider>
@@ -11,9 +12,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           
-            <Route path="/" element={<MainPage />} />
+            <Route path="/" element={<ProtectedRoute><MainPage /></ProtectedRoute>} />
             <Route path="signup" element={<SignupPage />} />
-            <Route path="login" element={<LoginPage/>} />
+            <Route path="login" element={<ProtectedRoute><LoginPage /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
       </AuthProvider>
