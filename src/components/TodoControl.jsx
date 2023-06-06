@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useTheme } from "../context/ThemeContext";
-
+import {clearCompleted} from "../store/slice/TodoSlice"
+import { useDispatch } from "react-redux";
 const TodoControl = ({ setFilterStatus, filterStatus }) => {
   const TodoList = useSelector((state) => state.todo);
   const checked = TodoList.filter((todo) => todo.status);
   const { width } = useTheme();
+  const dispatch=useDispatch()
 
   const handleFilter = (filter) => {
     setFilterStatus(filter);
@@ -35,14 +37,14 @@ const TodoControl = ({ setFilterStatus, filterStatus }) => {
         </button>
       </div>
       <div className="ml-8">
-        <button>Clear Completed</button>
+        <button onClick={()=>dispatch(clearCompleted())}>Clear Completed</button>
       </div>
     </div>
   );
     const mobileControl=  <div className=" shadow-2xl rounded-md">
     <div className="w-[100%] shadow-2xl text-sm text-gray-400 flex justify-between items-center dark:bg-blue-950 dark:text-gray-50 bg-white h-[64px] rounded-md py-[22px] px-[20px]">
       <div className="mr-8">{checked.length} items completed</div>
-      <button>Clear Completed</button>
+      <button onClick={()=>dispatch(clearCompleted())}>Clear Completed</button>
     </div>
 
     <div className="flex-grow flex w-[100%] mt-[22px] text-sm text-gray-400 bg-white h-[64px] rounded-md dark:bg-blue-950 justify-evenly">

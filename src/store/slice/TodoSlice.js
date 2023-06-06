@@ -18,8 +18,13 @@ const TodoSlice=createSlice({
                 }
                 return todo
             }) 
+        },
+        clearCompleted:(state,action)=>{
+            return state.filter((todo)=>{
+                return !todo.status
+            })
         }
     }
 })
-export const {addTodo,statusChange} = TodoSlice.actions
+export const {addTodo,statusChange,clearCompleted} = TodoSlice.actions
 export default TodoSlice
